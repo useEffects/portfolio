@@ -1,11 +1,13 @@
 import path from 'path';
 import fs from 'fs';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET (req: NextApiRequest, res: NextApiResponse) {
+export async function GET (req: NextRequest, res: NextResponse) {
   const filePath = path.join(process.cwd(), 'public', 'Resume.pdf'); 
   if (!fs.existsSync(filePath)) {
-    return res.status(404).end();
+    return new Response("File unavailable", {
+      status: 400
+    })
   }
   const file = fs.readFileSync(filePath);
   return new Response(file, {
