@@ -1,0 +1,33 @@
+## Q1) The GNU Project
+* Your textbook `Abraham Silberschatz, Peter B. Galvin, Greg Gagne, “Operating System Concepts”, 10th Ed., John Wiley,2018` repeatedly addresses Linux as GNU/Linux, how far is it true? ( Hint: It's not! )
+* Out of MacOS, Solaris, Ubuntu, Void Linux, Windows 11, sort out Posix Certified and Posix Compliant operating systems, how do Posix Certified and Posix Compliant operating systems differ from each other ?
+* Why does the `getline` function do not work with certain C compilers? (mingw). What are some work arounds for this?
+## Q2) Processes and Threads
+* What are the other init systems used other than `systemd`? Give examples of linux distro's that use those init systems.
+* `systemd` is the most popular and widely used init system, inspite of that why is it so hated by the community?
+* State the difference(s) between concurrency, multi threading, multi processing and parallelism
+## Q3) Scheduling in CPU
+> Golang is famous for its high performance and concurrency. Goroutines in the context of the programming language are a form of cooperative multitasking or cooperative scheduling. Cooperative scheduling is a concurrency model where tasks (such as threads or goroutines) explicitly yield control to other tasks. This is in contrast to preemptive scheduling, where the operating system decides when to switch between tasks based on a predefined time slice. This cooperative behavior is known as context switching, and in Golang, there is no traditional, OS-level context switching.
+* How does schedulers implemented in programming languages differ from the OS scheduler? How do they work together, if any?
+* Why is Preemptive scheduling preferred in the design of operating systems? Provide examples of real-world situations where preemptive scheduling is more suitable than non-preemptive scheduling, and vice versa?
+
+> CPU Scheduling decisions may take place under the following four circumstances:
+>    1) When a process switches from the running state to the waiting state. (for example, I/O request..)
+>    2) When a process switches from the running state to the ready state. (for example, when an interrupt occurs)
+>    3) When a process switches from the waiting state to the ready state. (for example, completion of I/O)
+>    4) When a process terminates.
+
+* Sort out which of the cases follow preemptive and non-preemptive scheduling from the above circumstances.
+## Q4) Memory Management
+* What happens if the program which you intend to run has size more than the virtual memory?
+* How do you not create new memory again when using `fork()`?
+* Explain thrashing in OS.
+## Q5) Storage Management
+* When data is overwritten, it's lost forever. Is it still true?
+*  Although Android does not support swapping on its boot disk, it is
+possible to set up a swap space using a separate SD nonvolatile memory
+card. Why would Android disallow swapping on its boot disk yet allow
+it on a secondary disk?
+* Is there any way to implement truly stable storage? Explain your
+answer.
+
