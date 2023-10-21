@@ -5,8 +5,8 @@ import { CatppuccinProvider } from "@/context/catppuccin";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" id="__next">
+      <body data-theme="light">
         <DarkModeProvider>
           <ThemeProvider>
             <CatppuccinProvider>{children}</CatppuccinProvider>
