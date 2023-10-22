@@ -14,6 +14,37 @@ const navItems = [
   }
 ]
 
+enum Domain {
+  FullStack,
+  SoftwareDevelopment,
+  AppDevelopment,
+}
+
+const DomainsInfo: Record<Domain, {
+  label: string
+}> = {
+  [Domain.FullStack]: {
+    label: "FullStack Development"
+  },
+  [Domain.SoftwareDevelopment]: {
+    label: "Software Development"
+  },
+  [Domain.AppDevelopment]: {
+    label: "App Development"
+  },
+}
+
+const portfolioItems = [
+  {
+    img: "/portfolio.jpg",
+    name: "Portfolio Website",
+    github: "https://github.com/useEffects/portfolio",
+    header: "Current website",
+    domains: [Domain.FullStack],
+    live: "https://itzapril.tech"
+  }
+]
+
 export default function Home() {
   return (
     <>
@@ -51,6 +82,17 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      <div className="bg-mantle">
+        <Container maxWidth="md" className="p-8">
+          {portfolioItems.map((item, key) => <div className="bg-base hover:bg-mantle hover:border-mauve border-solid border-[1px] border-crust flex flex-col p-8 rounded-xl gap-4 w-[calc(250px+4rem)] transition-all ease-in-out duration-500" key={key}>
+            <p className="text-lg font-medium my-0"> {item.name} </p>
+            <div className="my-0"> {item.domains.map((domain, key) => <Chip size="small" key={key} label={DomainsInfo[domain].label}></Chip>)} </div>
+            <Image src={item.img} width={250} height={250} alt="" className="rounded"></Image>
+            <p className="my-0"> {item.header} </p>
+            <p className="my-0"> <Link className="text-blue" href={item.github}> {item.github} </Link> </p>
+          </div>)}
+        </Container>
+      </div>
     </>
   )
 }
