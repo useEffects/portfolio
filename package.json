@@ -22,7 +22,7 @@
     "@next/mdx": "^13.5.5",
     "@types/mdx": "^2.0.8",
     "@types/node": "20.6.2",
-    "@types/react": "18.2.22",
+    "@types/react": "^18.2.25",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "directory-tree": "^3.5.1",

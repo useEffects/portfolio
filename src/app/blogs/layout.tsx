@@ -39,7 +39,7 @@ function Navbar({ tree }: { tree: dirTree.DirectoryTree<Record<string, any>> }):
   );
 }
 
-export default function BlogsLayout({ children }: { children: React.ReactNode }) {
+export default function BlogsLayout({ children }: { children: React.ReactNode }): ReactNode {
   return <Container className="flex gap-4 p-4">
     <div className="hidden md:block">
       <Navbar tree={tree} />
