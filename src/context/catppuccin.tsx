@@ -1,8 +1,8 @@
 "use client";
 
-import { catppuccinColors } from "@coding-club-gct/theme";
 import { ReactNode, createContext, useContext, useMemo } from "react";
 import { DarkModeContext } from "./darkmode";
+import { catppuccinColors } from "@/components/theme";
 
 export const CatppuccinContext = createContext(catppuccinColors.dark);
 export function CatppuccinProvider({ children }: { children: ReactNode }) {

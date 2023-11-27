@@ -1,11 +1,11 @@
 "use client";
 
 import { ReactNode, createContext, useContext, useMemo } from "react";
-import { muiDarkThemeConfig, muiLightThemeConfig } from "@coding-club-gct/theme";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import { CssBaseline, Theme } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { DarkModeContext } from "./darkmode";
+import { muiDarkThemeConfig, muiLightThemeConfig } from "@/components/theme";
 
 export const ThemeContext = createContext<Theme | null>(null);
 

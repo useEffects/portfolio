@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/context/mui";
 import "./tailwind.css";
+import "./global.css"
 import { DarkModeProvider } from "@/context/darkmode";
 import { CatppuccinProvider } from "@/context/catppuccin";
 

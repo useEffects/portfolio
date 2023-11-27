@@ -3,12 +3,13 @@ import dirTree from "directory-tree";
 import Link from "next/link";
 import { join } from "path";
 import { cwd } from "process";
+import { ReactNode } from "react";
 
-const tree = dirTree(join(cwd(), "src/app/blogs"), {
+export const tree = dirTree(join(cwd(), "src/app/blogs"), {
   extensions: /\page.mdx/
 })
 
-function Navbar({ tree }: { tree: dirTree.DirectoryTree<Record<string, any>> }) {
+function Navbar({ tree }: { tree: dirTree.DirectoryTree<Record<string, any>> }): ReactNode {
   if (!tree) {
     return null;
   }

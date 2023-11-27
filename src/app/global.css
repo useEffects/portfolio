@@ -1,0 +1,29 @@
+p,
+a,
+span {
+    @apply my-0 py-0
+}
+
+a {
+    @apply text-blue
+}
+
+i {
+    @apply text-inherit
+}
+
+.hero-gradient {
+    background-color: hsl(var(--twc-base));
+    background-image:
+        radial-gradient(at 10% 2%, hsl(var(--twc-crust)) 0px, transparent 75%),
+        radial-gradient(at 10% 75%, hsl(var(--twc-base)) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsl(var(--twc-mauve)) 0px, transparent 50%);
+}
+
+.experience-gradient {
+    background-color: hsl(var(--twc-base));
+    background-image:
+        radial-gradient(at 60% 65%, hsl(var(--twc-base)) 0px, transparent 100%),
+        radial-gradient(at 60% 65%, hsl(var(--twc-mantle)) 0px, transparent 100%),
+        radial-gradient(at 95% 50%, hsl(var(--twc-mauve)) 0px, transparent 50%);
+}
