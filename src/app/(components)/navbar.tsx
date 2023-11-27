@@ -3,7 +3,7 @@
 import DarkModeSwitcher from "@/components/darkmodeSwitch"
 import { AppBar, Toolbar, Divider, Button } from "@mui/material"
 import Link from "next/link"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
 
 const navItems = [
     {
@@ -21,7 +21,7 @@ const navItems = [
     },
 ]
 
-export default function Navbar() {
+export default function Navbar(): ReactNode {
     const [current, setCurrent] = useState(navItems[0].id)
     return <AppBar position="static" color="transparent">
         <Toolbar className="flex justify-between min-h-0 h-8 my-8 items-center">
