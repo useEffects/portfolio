@@ -1,13 +1,8 @@
 import { Container } from "@mui/material";
 import dirTree from "directory-tree";
 import Link from "next/link";
-import { join } from "path";
-import { cwd } from "process";
 import { ReactNode } from "react";
-
-export const tree = dirTree(join(cwd(), "src/app/blogs"), {
-  extensions: /\page.mdx/
-})
+import { tree } from "../lib";
 
 function Navbar({ tree }: { tree: dirTree.DirectoryTree<Record<string, any>> }): ReactNode {
   if (!tree) {
@@ -39,7 +34,7 @@ function Navbar({ tree }: { tree: dirTree.DirectoryTree<Record<string, any>> }):
   );
 }
 
-export default function BlogsLayout({ children }: { children: React.ReactNode }): ReactNode {
+export default function ({ children }: { children: React.ReactNode }): ReactNode {
   return <Container className="flex gap-4 p-4">
     <div className="hidden md:block">
       <Navbar tree={tree} />
