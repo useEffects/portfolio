@@ -42,7 +42,7 @@ i {
 .experience-gradient {
     background-color: hsl(var(--twc-base));
     background-image:
-        radial-gradient(at 60% 65%, hsl(var(--twc-base)) 0px, transparent 100%),
+        radial-gradient(at 60% 65%, hsl(var(--twc-mantle)) 0px, transparent 100%),
         radial-gradient(at 60% 65%, hsl(var(--twc-mantle)) 0px, transparent 100%),
         radial-gradient(at 95% 50%, hsl(var(--twc-primary)) 0px, transparent 50%);
 }
@@ -62,15 +62,15 @@ i {
 }
 
 .smooth-top {
-    height: 10rem;
+    height: 5rem;
     width: 100%;
-    background-image: linear-gradient(0deg, hsl(var(--twc-mantle)) 0%, hsl(var(--twc-base)));
+    background-image: linear-gradient(0deg, hsl(var(--twc-base)) 0%, hsl(var(--twc-mantle)));
 }
 
 .smooth-bottom {
-    height: 10rem;
+    height: 5rem;
     width: 100%;
-    background-image: linear-gradient(0deg, hsl(var(--twc-base)) 0%, hsl(var(--twc-mantle)));
+    background-image: linear-gradient(0deg, hsl(var(--twc-mantle)) 0%, hsl(var(--twc-base)));
 }
 
 .neon-dot {

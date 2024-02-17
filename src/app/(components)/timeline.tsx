@@ -8,6 +8,7 @@ export default function Timeline({ children }: { children: ReactNode }): ReactNo
         [`& .${timelineItemClasses.root}:before`]: {
             flex: 0,
             padding: 0,
+            margin: 0
         },
     }}>
         {children}
