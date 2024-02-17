@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@catppuccin/palette": "^0.2.0",
     "@coding-club-gct/theme": "^1.2.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -25,6 +26,7 @@
     "@types/react": "^18.2.25",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
+    "colorsea": "^1.2.1",
     "directory-tree": "^3.5.1",
     "next": "14.1.0",
     "next-themes": "^0.2.1",

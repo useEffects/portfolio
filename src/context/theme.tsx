@@ -1,7 +1,7 @@
 "use client";
 
+import { themes, colorThemes } from "@/theme";
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { colorThemes, themes } from "../../theme/src";
 
 export const ThemeContext = createContext({
     theme: "dark-mauve" as typeof themes[number],

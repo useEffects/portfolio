@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@catppuccin/palette':
+    specifier: ^0.2.0
+    version: 0.2.0
   '@coding-club-gct/theme':
     specifier: ^1.2.1
     version: 1.2.1(@types/react@18.2.56)(postcss@8.4.29)(react-dom@18.2.0)
@@ -53,6 +56,9 @@ dependencies:
   autoprefixer:
     specifier: 10.4.15
     version: 10.4.15(postcss@8.4.29)
+  colorsea:
+    specifier: ^1.2.1
+    version: 1.2.1
   directory-tree:
     specifier: ^3.5.1
     version: 3.5.1

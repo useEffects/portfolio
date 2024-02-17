@@ -1,5 +1,4 @@
-import { tailwindConfig } from './theme/src'
-import type { Config } from 'tailwindcss'
+import { tailwindConfig } from './src/theme'
 
 const config = tailwindConfig
 export default config

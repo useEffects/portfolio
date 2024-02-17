@@ -4,7 +4,7 @@ import { CssBaseline, Theme, ThemeOptions } from "@mui/material";
 import { ThemeProvider as MuiThemeProvider, createTheme } from "@mui/material/styles";
 import { ReactNode, createContext, useContext, useMemo } from "react";
 import { ThemeContext } from "./theme";
-import { generateThemeConfig } from "../../theme/src";
+import { generateThemeConfig } from "@/theme";
 
 export const MyMuiThemeContext = createContext<Theme | null>(null);
 

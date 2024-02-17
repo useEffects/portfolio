@@ -3,8 +3,8 @@
 import { CatppuccinContext } from "@/context/catppuccin"
 import { useContext, useEffect, useState } from "react"
 import { DarkModeSwitch } from "react-toggle-dark-mode"
-import { colorThemes, themes } from "./theme"
 import { ThemeContext } from "@/context/theme"
+import { colorThemes } from "@/theme"
 
 export default function DarkModeSwitcher() {
     const { theme, toggleTheme } = useContext(ThemeContext)
