@@ -1,23 +1,22 @@
 "use client";
 
+import { CssBaseline, Theme, ThemeOptions } from "@mui/material";
+import { ThemeProvider as MuiThemeProvider, createTheme } from "@mui/material/styles";
 import { ReactNode, createContext, useContext, useMemo } from "react";
-import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
-import { CssBaseline, Theme } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
-import { DarkModeContext } from "./darkmode";
-import { muiDarkThemeConfig, muiLightThemeConfig } from "@/components/theme";
+import { ThemeContext } from "./theme";
+import { generateThemeConfig } from "../../theme/src";
 
-export const ThemeContext = createContext<Theme | null>(null);
+export const MyMuiThemeContext = createContext<Theme | null>(null);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-    const { darkMode } = useContext(DarkModeContext);
-    const theme = darkMode ? createTheme({ ...muiDarkThemeConfig }) : createTheme({ ...muiLightThemeConfig });
+export function MyMuiThemeProvider({ children }: { children: ReactNode }) {
+    const { theme } = useContext(ThemeContext);
+    const muiTheme = useMemo(() => generateThemeConfig(theme), [theme])
     return (
-        <ThemeContext.Provider value={theme}>
-            <MuiThemeProvider theme={theme}>
+        <MyMuiThemeContext.Provider value={muiTheme as Theme}>
+            <MuiThemeProvider theme={muiTheme}>
                 <CssBaseline />
                 {children}
             </MuiThemeProvider>
-        </ThemeContext.Provider>
+        </MyMuiThemeContext.Provider>
     );
 }

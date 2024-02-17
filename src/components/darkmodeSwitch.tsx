@@ -1,17 +1,30 @@
 "use client"
 
 import { CatppuccinContext } from "@/context/catppuccin"
-import { DarkModeContext } from "@/context/darkmode"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { DarkModeSwitch } from "react-toggle-dark-mode"
+import { colorThemes, themes } from "./theme"
+import { ThemeContext } from "@/context/theme"
 
 export default function DarkModeSwitcher() {
-    const { darkMode, toggleDarkMode } = useContext(DarkModeContext)
+    const { theme, toggleTheme } = useContext(ThemeContext)
+    const [darkMode, setDarkMode] = useState(theme.split("-")[0] === "dark")
+    const [colorMode, setColorMode] = useState(theme.split("-")[1] as typeof colorThemes[number])
     const catppuccinColor = useContext(CatppuccinContext)
-    return <DarkModeSwitch
-        sunColor={catppuccinColor.peach}
-        moonColor={catppuccinColor.yellow}
-        checked={darkMode}
-        onChange={toggleDarkMode}
-    />
+
+    useEffect(() => {
+        toggleTheme(darkMode ? "dark" : "light", colorMode)
+    }, [darkMode, colorMode])
+
+    return <div className="flex gap-4">
+        <DarkModeSwitch
+            sunColor={catppuccinColor.peach}
+            moonColor={catppuccinColor.yellow}
+            checked={darkMode}
+            onChange={() => setDarkMode(prev => !prev)}
+        />
+        <div className="flex gap-2 items-center">
+            {colorThemes.map((color, i) => <div style={{ background: catppuccinColor[color], height: color === colorMode ? "1.5rem" : undefined }} className="h-4 w-4 rounded cursor-pointer" onClick={() => setColorMode(color)} key={i}></div>)}
+        </div>
+    </div>
 }
