@@ -178,8 +178,15 @@ export default function Home() {
           </div>
           <div className="flex flex-col justify-center gap-4">
             <div className="flex flex-col gap-4">
-              <Button className="w-full rounded-full" variant="contained">Download CV</Button>
-              <p className="text-subtext0"> Or individual resume's, </p>
+              <div className="flex gap-4">
+                <a className="no-underline w-1/2" href="">
+                  <Button className="rounded-full w-full" variant="contained">Download CV</Button>
+                </a>
+                <a className="no-underline w-1/2" href="">
+                  <Button className="rounded-full w-full" variant="contained">Download Resume</Button>
+                </a>
+              </div>
+              <p className="text-subtext0"> Or individual resume's: </p>
               <div className="flex flex-wrap gap-2">
                 {resumes.map((resume, i) => <a href={resume.href} key={i} className="text-primary no-underline">
                   <Button variant="outlined" className="rounded-full flex gap-4">
@@ -230,7 +237,7 @@ export default function Home() {
       </div>
       <div className="smooth-top"></div>
       <Container className="flex bg-base flex-col gap-4" maxWidth="md">
-        <Heading text="Blogs"/>
+        <Heading text="Blogs" />
         <div className="flex flex-col md:flex-row flex-wrap gap-4">
           {blogItems.map((item, i) => <div className="p-4 rounded-xl hover:bg-base bg-mantle border-[1px] md:w-[calc(50%-0.5rem)] border-mantle border-solid flex flex-col gap-4" key={i}>
             <div className="w-full h-[300px] relative">
